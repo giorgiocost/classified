@@ -1,0 +1,11 @@
+
+CREATE DATABASE IF NOT EXISTS classificados;
+
+USE classificados;
+
+CREATE TABLE IF NOT EXISTS usuarios (
+    id_usuarios INT(11) AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    senha VARCHAR(32) NOT NULL
+);
