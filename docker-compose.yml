@@ -6,8 +6,8 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - ./db_data/:/var/lib/mysql
-      - ./dump:/docker-entrypoint-initdb.d
+      - ./db_data/:/var/lib/mysql # monsta local onde mysql vai armazenar os arquivos locais
+      - ./dump:/docker-entrypoint-initdb.d # pasta onde vc vai colocar os scripts .sql que quer executar na inicializacao 
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: classificados
