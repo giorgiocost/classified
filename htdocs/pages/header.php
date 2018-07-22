@@ -15,13 +15,14 @@
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a href="http://" class="navbar-brand">Classificados</a>
+                <a href="/" class="navbar-brand">Classificados</a>
             </div>
             <ul class="nav navbar-nav navbar-right">
 
-        <?php        
+        <?php     
             if(isset($_SESSION['cLogin']) && !empty($_SESSION['cLogin'])){ 
         ?>
+                <li><?php echo $_SESSION['nome']; ?></li>
                 <li><a href="meus-anuncios.php">Meus Anúncios</a></li>
                 <li><a href="sair.php">Sair</a></li>
         <?php 

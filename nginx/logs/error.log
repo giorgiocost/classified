@@ -1,0 +1,1 @@
+2018/07/22 01:43:41 [error] 7#7: *5 directory index of "/var/www/html/api.dev/" is forbidden, client: 172.20.0.1, server: localhost, request: "GET /api.dev/ HTTP/1.1", host: "localhost"
