@@ -7,9 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Classificados</title>
     <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="assets/js/bootstrap.js"></script>
-    <script src="assets/js/script.jss"></script>
+    <script src="assets/js/script.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-inverse">
@@ -20,9 +21,10 @@
             <ul class="nav navbar-nav navbar-right">
 
         <?php     
-            if(isset($_SESSION['cLogin']) && !empty($_SESSION['cLogin'])){ 
+            if(isset($_SESSION['cLogin']) && !empty($_SESSION['cLogin'])){
+                $nome = $_SESSION['cLogin'];  
         ?>
-                <li><?php echo $_SESSION['nome']; ?></li>
+                <li><strong><?php echo "Bem vindo ".$nome ?></strong></li>
                 <li><a href="meus-anuncios.php">Meus Anúncios</a></li>
                 <li><a href="sair.php">Sair</a></li>
         <?php 

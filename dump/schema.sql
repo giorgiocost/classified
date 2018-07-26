@@ -25,3 +25,9 @@ CREATE TABLE IF NOT EXISTS anuncios (
     valor FLOAT NOT NULL,
     estado INT(11) NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS anuncios_imagens(
+    id INT(11) AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    id_anuncios INT NOT NULL,
+    url_anuncios VARCHAR(100) NOT NULL
+);

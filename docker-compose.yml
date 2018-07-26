@@ -58,7 +58,7 @@ services:
             - "3306:3306"
         volumes:
             - ${MYSQL_DATA}:/var/lib/mysql
-            - ./dump:/docker-entrypoint-initdb.d
+            - ${SCHEMA_DUMP}:/docker-entrypoint-initdb.d
         environment:
             - MYSQL_ROOT_PASSWORD=root
             - MYSQL_DATABASE=classificados
