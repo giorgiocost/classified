@@ -22,20 +22,21 @@
     </thead>
     <?php
         require "classes/anuncios.class.php";
-        $a - new Anuncios();
+        $a = new Anuncios();
         $anuncios = $a->getMeusAnuncios();
+        
             foreach($anuncios as $anuncio){
     ?>
         <tr>
-                <td><img src=""  alt=""/></td>
+                <td><img src="assets/images/"  alt=""/></td>
                 <td><?php echo $anuncio['titulo'];?></td>
                 <td>R$ <?php echo number_format($anuncio['valor'],2);?></td>
                 <td></td>
         </tr>
     <?php            
             }
-        ?>
     ?>
+  
 </table>
 </div>
 <?php require "pages/footer.php"; ?>
