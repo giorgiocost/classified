@@ -1,12 +1,18 @@
 <?php 
     require "pages/header.php";
-    session_start();
+    if(empty($_SESSION['cLogin'])){
+?>
+		<script type="text/javascript">window.location.href="login.php";</script>
+<?php
+		exit;
+	}
 ?>
 
 
 
 <div class="container">
-<form method="POST">
+<h1>Meus Anúncios - Adicionar Anúncios</h1>
+<form method="POST" enctype="multipart/form-data">
 		<div class="form-group">
 			<label for="imagem">imagem:</label>
 			<input type="text" name="imagem" id="imagem" class="form-control" />
