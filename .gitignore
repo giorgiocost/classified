@@ -1,3 +1,4 @@
-nginx/logs/*
+data/*
 
-mysql/data/*
+mysql/*
+db_data/*
