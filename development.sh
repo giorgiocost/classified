@@ -5,6 +5,11 @@ if [ $* == 'up' ]; then
     exit 1
 fi
 
+if [ $* == 'restart' ]; then
+    docker-compose down && docker-compose up -d
+    exit 1
+fi
+
 if [ $* == 'down' ]; then
     docker-compose down
     exit 1

@@ -2,3 +2,4 @@ data/*
 
 mysql/*
 db_data/*
+nginx/logs/*

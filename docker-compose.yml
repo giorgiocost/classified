@@ -62,8 +62,8 @@ services:
         environment:
             - MYSQL_ROOT_PASSWORD=root
             - MYSQL_DATABASE=classificados
-            - MYSQL_USER=giorgio
-            - MYSQL_PASSWORD=giorgio
+            - MYSQL_USER=test
+            - MYSQL_PASSWORD=test
         networks:
             - code-network
     phpmyadmin:
