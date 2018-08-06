@@ -5,8 +5,8 @@ session_start();
 global $pdo;
 
 define( 'MYSQL_HOST', 'mysql' );
-define( 'MYSQL_USER', 'giorgio' );
-define( 'MYSQL_PASSWORD', 'giorgio' );
+define( 'MYSQL_USER', 'root' );
+define( 'MYSQL_PASSWORD', 'root' );
 define( 'MYSQL_DB_NAME', 'classificados' );
 
 global $pdo;
