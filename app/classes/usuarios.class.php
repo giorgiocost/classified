@@ -6,11 +6,20 @@ class Usuarios{
 
     public function cadastrar($nome, $email, $senha, $telefone){
         global $pdo;
-            $sql = $pdo->prepare("SELECT id FROM usuarios WHERE email= :email");
+
+            $sql = $pdo->prepare("SELECT id FROM usuarios WHERE 
+            email= :email");
+            
             $sql->bindValue(":email", $email);
             $sql->execute();
         if($sql->rowCount() == 0){
-            $sql = $pdo->prepare("INSERT INTO usuarios SET nome = :nome, email = :email, senha = :senha, telefone = :telefone");
+            
+            $sql = $pdo->prepare("INSERT INTO usuarios SET 
+            nome = :nome, 
+            email = :email, 
+            senha = :senha, 
+            telefone = :telefone");
+
             $sql->bindValue(":nome", $nome);
             $sql->bindValue(":email", $email);
             $sql->bindValue(":senha", md5($senha));
@@ -24,7 +33,12 @@ class Usuarios{
 
     public function logar($email, $senha){
         global $pdo;
-        $sql = $pdo->prepare("SELECT id,nome FROM usuarios WHERE email= :email AND senha = :senha");
+        
+        $sql = $pdo->prepare("SELECT id,nome FROM usuarios WHERE 
+        email= :email 
+        AND 
+        senha = :senha");
+
         $sql->bindValue(":email", $email);
         $sql->bindValue(":senha", md5($senha));
         $sql->execute();
