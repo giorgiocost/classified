@@ -18,7 +18,7 @@
 		$valor = addslashes($_POST['valor']);
 		$estado = addslashes($_POST['estado']);
 
-		$a->addAnuncios($titulo, $categoria, $descricao, $valor, $estado);
+		$a->addAnuncios("aaa",1, "fsdfsd","dwadad", 2);
 		
 		var_dump($pdo);
 	}
