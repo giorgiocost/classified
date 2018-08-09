@@ -6,6 +6,24 @@
 <?php
 		exit;
 	}
+
+	require "classes/anuncios.class.php";
+	$a = new Anuncios();
+
+	if(isset($_POST['titulo']) && !empty($_POST['titulo'])){
+
+		$titulo = addslashes($_POST['titulo']);
+		$categoria = addslashes($_POST['categoria']);		
+		$descricao = addslashes($_POST['descricao']);
+		$valor = addslashes($_POST['valor']);
+		$estado = addslashes($_POST['estado']);
+
+		$a->addAnuncios("aaa",1, "fsdfsd","dwadad", 2);
+		
+		var_dump($pdo);
+	}
+
+	
 ?>
 
 
@@ -24,15 +42,15 @@
 	
 				foreach($cats as $cat){
 			?>
-				<option value="<?php echo cats?>"></option>
+				<option value="<?php echo $cat['id'];?>"><?php echo  utf8_encode($cat['nome']);?></option>
 			<?php
 				}
 			?>	
 		</select>
 	</div>
 	<div class="form-group">
-			<label for="titulo">Título:</label>
-			<input type="text" name="titulo" id="titulo" class="form-control" />
+		<label for="titulo">Título:</label>
+		<input type="text" name="titulo" id="titulo" class="form-control" />
 	</div>
 	<div class="form-group">
 		<label for="valor">Valor:</label>
@@ -43,10 +61,6 @@
 		<input type="text" name="descricao" id="descricao" class="form-control" />
 	</div>
 	<div class="form-group">
-		<label for="imagem">imagem:</label>
-		<input type="text" name="imagem" id="imagem" class="form-control" />
-	</div>
-	<div class="form-group">
 		<label for="estado">Estado de Conservação:</label>
 		<select name="estado" id="estado" class="form-control">
 			<option value="0">Ruim</option>
@@ -54,7 +68,7 @@
 			<option value="2">Ótimo</option>		
 		</select>
 	</div>
-		<input type="submit" value="Adicionar" class="btn btn-default" />
+		<input type="submit" value="Salvar" class="btn btn-default" />
 	</form>
 </div>
 

@@ -8,7 +8,7 @@ class Categorias{
         $sql = $pdo->query("SELECT * FROM categorias");
 
         if($sql->rowCount() > 0){
-            $arrya = $sql->fetchAll();
+            $array = $sql->fetchAll();
         }
 
         return $array;
