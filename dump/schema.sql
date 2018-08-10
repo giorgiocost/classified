@@ -18,8 +18,8 @@ CREATE TABLE IF NOT EXISTS categorias (
 
 CREATE TABLE IF NOT EXISTS anuncios (
     id INT(11) AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    id_usuarios INT NOT NULL,
-    id_categorias INT NOT NULL,
+    id_usuarios INT(11) NULL,
+    id_categorias INT(11) NULL,
     titulo VARCHAR(100) NOT NULL,
     descricao TEXT,
     valor FLOAT NOT NULL,
@@ -28,6 +28,6 @@ CREATE TABLE IF NOT EXISTS anuncios (
 
 CREATE TABLE IF NOT EXISTS anuncios_imagens(
     id INT(11) AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    id_anuncios INT NOT NULL,
+    id_anuncios INT(11) NULL,
     url_anuncios VARCHAR(100) NOT NULL
 );
