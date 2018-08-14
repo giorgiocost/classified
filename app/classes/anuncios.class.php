@@ -24,21 +24,15 @@ class Anuncios{
     public function addAnuncios($titulo, $categoria, $valor, $descricao,  $estado){
         global $pdo;
 
-        $sql = $pdo->prepare("INSERT INTO anuncios SET 
-        titulo = :titulo,
-        id_categorias = :id_categorias,
-        id_usuarios = :id_usuarios,
-        descricao = :descricao, 
-        valor = :valor,  
-        estado = :estado");
+        $sql = $pdo->prepare("INSERT INTO anuncios (id_usuarios,id_categorias,titulo,descricao,valor,estado) VALUES 
+        (:id_usuarios,:id_categorias,:titulo,:descricao,:valor,:estado)");
         
-        $sql->bindValue(":titulo", $titulo);
+        $sql->bindValue(":id_usuarios", intval($_SESSION['id']));
         $sql->bindValue(":id_categorias", $categoria);
-        $sql->bindValue(":id_usuarios", $_SESSION['cLogin']);
+        $sql->bindValue(":titulo", $titulo);
         $sql->bindValue(":descricao", $descricao);
         $sql->bindValue(":valor", $valor);
         $sql->bindValue(":estado", $estado);
         $sql->execute();
-        
     }
 }

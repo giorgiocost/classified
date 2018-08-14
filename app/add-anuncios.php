@@ -1,6 +1,7 @@
 <?php 
     require "pages/header.php";
     if(empty($_SESSION['cLogin'])){
+		
 ?>
 		<script type="text/javascript">window.location.href="login.php";</script>
 <?php
@@ -8,9 +9,10 @@
 	}
 
 	require "classes/anuncios.class.php";
-	$a = new Anuncios();
+	
 
 	if(isset($_POST['titulo']) && !empty($_POST['titulo'])){
+		$a = new Anuncios();
 
 		$titulo = addslashes($_POST['titulo']);
 		$categoria = addslashes($_POST['categoria']);		
@@ -18,9 +20,9 @@
 		$valor = addslashes($_POST['valor']);
 		$estado = addslashes($_POST['estado']);
 
-		$a->addAnuncios("aaa",1, "fsdfsd","dwadad", 2);
+		$a->addAnuncios($titulo, $categoria, $valor, $descricao,  $estado);
 		
-		var_dump($pdo);
+		
 	}
 
 	
