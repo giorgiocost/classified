@@ -31,7 +31,7 @@
             foreach($anuncios as $anuncio){
     ?>
         <tr>
-                <td><img src="assets/img/aaa.png"  alt=""/></td>
+                <td><img src="assets/img/imagem.png"  alt="" width="50"/></td>
                 <td><?php echo $anuncio['titulo'];?></td>
                 <td>R$ <?php echo number_format($anuncio['valor'],2);?></td>
                 <td></td>

@@ -22,7 +22,18 @@
 
 		$a->addAnuncios($titulo, $categoria, $valor, $descricao,  $estado);
 		
-		
+		?>
+			<div class="alert alert-success">
+				Produto adicionado com sucesso !
+			</div>
+		<?php
+	}else{
+
+		?>
+			<div class="alert">
+				Produto não foi cadastrado.
+			</div>
+		<?php
 	}
 
 	
