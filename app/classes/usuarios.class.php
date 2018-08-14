@@ -51,6 +51,14 @@ class Usuarios{
             return false;
         }
     }
+
+    public function getQuantidadeUsuariosCadastrados(){
+        global $pdo;
+
+        $sql = $pdo->prepare("SELECT * FROM usuarios");
+        $sql->execute();
+    
+    }
  
     
 }
