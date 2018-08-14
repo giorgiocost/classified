@@ -3,6 +3,12 @@
         <div class="jumbotron">
             <h2>Nós Temos hoje 254 anúncios.</h2>
             <p>E mais de 1000 usuários cadastrados.</p>
+            <?php
+            require "classes/usuarios.class.php";
+
+            $qtd = new usuarios();
+            echo $qtd->getQuantidadeUsuariosCadastrados(); 
+            ?>
         </div>
         <div class="row">
             <div class="col-sm-3">
