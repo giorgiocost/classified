@@ -10,7 +10,7 @@ class Anuncios{
         
         $sql = $pdo->prepare("SELECT * FROM anuncios WHERE 
         id_usuarios = :id_usuarios ");
-        $sql->bindValue(":id_usuarios", $_SESSION['cLogin']);
+        $sql->bindValue(":id_usuarios", $_SESSION['id']);
         $sql->execute();
 
         if($sql->rowCount() > 0){
