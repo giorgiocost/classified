@@ -13,8 +13,9 @@
 
 
 <a href="add-anuncios.php" class="btn btn-default">Adicionar Anúncio</a>
-
-<table class="table table-striped">
+<br>
+<br>
+<table class="table table-bordered">
     <thead>
         <tr>
             <th>Foto</th>
@@ -29,9 +30,23 @@
         $anuncios = $a->getMeusAnuncios();
         
             foreach($anuncios as $anuncio){
+
+                 
     ?>
         <tr>
-                <td><img src="assets/img/imagem.png"  alt="" width="50"/></td>
+                <td>
+                <?php 
+                    if(!$anuncio['url_anuncios'] == ""){
+                ?>
+                    <img src="assets/img/anuncios/<?php echo $anuncio['url_anuncios']; ?>"  alt="" width="50"/>
+                <?php
+                }else{
+                ?>    
+                    <img src="assets/img/anuncios/default.png"  alt="" width="50"/>
+                    <?php
+                }
+                ?>
+                </td>
                 <td><?php echo $anuncio['titulo'];?></td>
                 <td>R$ <?php echo number_format($anuncio['valor'],2);?></td>
                 <td></td>
