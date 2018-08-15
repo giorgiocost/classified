@@ -32,6 +32,6 @@ INSERT INTO categorias VALUES (2,"Games");
 INSERT INTO categorias VALUES (3,"Livros");
 INSERT INTO categorias VALUES (4,"Eletrodomésticos");
 
-
-ALTER TABLE usuarios CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-
+ALTER TABLE usuarios CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
+ALTER TABLE categorias CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
+ALTER TABLE anuncios CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
