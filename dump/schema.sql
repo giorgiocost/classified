@@ -26,3 +26,10 @@ CREATE TABLE IF NOT EXISTS anuncios (
     estado INT(11) NOT NULL,
     url_anuncios VARCHAR(100) NULL
 );
+
+INSERT INTO categorias VALUES (1,"Informática");
+INSERT INTO categorias VALUES (2,"Games");
+INSERT INTO categorias VALUES (3,"Livros");
+INSERT INTO categorias VALUES (4,"Eletrodomésticos");
+
+ALTER TABLE usuarios CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci;
