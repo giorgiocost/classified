@@ -19,6 +19,12 @@ if [ $* == 'ps' ]; then
     docker-compose ps
     exit 1
 fi
+
+if [ $* == 'del' ]; then
+    sudo rm -rf mysql/data/
+    exit 1
+fi
+
  
 if [ $# -lt 1 ]; then
    echo "Faltou utilizar pelo menos um argumento!"
