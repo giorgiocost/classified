@@ -50,8 +50,8 @@
                 <td><?php echo $anuncio['titulo'];?></td>
                 <td>R$ <?php echo number_format($anuncio['valor'],2);?></td>
                 <td>
-                    <a href="editar-anuncios.php?id=" class="btn btn-info">Editar</a>
-                    <a href="excluir-anuncios.php?id=" class="btn btn-danger">Excluir</a>
+                    <a href="editar-anuncios.php?id=<? echo $anuncio['id']; ?>" class="btn btn-info">Editar</a>
+                    <a href="excluir-anuncios.php?id=<? echo $anuncio['id'];?>" class="btn btn-danger">Excluir</a>
                 </td>
         </tr>
     <?php            
