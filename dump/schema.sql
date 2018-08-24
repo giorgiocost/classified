@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS anuncios (
     titulo VARCHAR(100) NOT NULL,
     descricao TEXT,
     valor FLOAT NOT NULL,
-    estado INT(11) NOT NULL,
+    estado INT(11) NULL,
     url_anuncios VARCHAR(100) NULL
 );
 

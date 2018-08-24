@@ -12,7 +12,7 @@
 <h1>Meus Anúncios</h1>
 
 
-<a href="add-anuncios.php" class="btn btn-default">Adicionar Anúncio</a>
+<a href="post-anuncios.php" class="btn btn-default">Adicionar Anúncio</a>
 <br>
 <br>
 <table class="table table-bordered">
@@ -50,8 +50,8 @@
                 <td><?php echo $anuncio['titulo'];?></td>
                 <td>R$ <?php echo number_format($anuncio['valor'],2);?></td>
                 <td>
-                    <a href="editar-anuncios.php?id=<? echo $anuncio['id']; ?>" class="btn btn-info">Editar</a>
-                    <a href="excluir-anuncios.php?id=<? echo $anuncio['id'];?>" class="btn btn-danger">Excluir</a>
+                    <a href="update-anuncios.php?id=<? echo $anuncio['id']; ?>" class="btn btn-info">Editar</a>
+                    <a href="delete-anuncios.php?id=<? echo $anuncio['id'];?>" class="btn btn-danger">Excluir</a>
                 </td>
         </tr>
     <?php            

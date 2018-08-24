@@ -3,6 +3,7 @@
 session_start();
 
 class Anuncios{
+    
     public function getMeusAnuncios(){
         global $pdo;
 
@@ -18,10 +19,9 @@ class Anuncios{
         }
 
         return $array;
-
     }
 
-    public function addAnuncios($titulo, $categoria, $valor, $descricao,  $estado){
+    public function postAnuncios($titulo, $categoria, $valor, $descricao,  $estado){
         global $pdo;
 
         $sql = $pdo->prepare("INSERT INTO anuncios (id_usuarios,id_categorias,titulo,descricao,valor,estado) VALUES 
@@ -36,12 +36,22 @@ class Anuncios{
         $sql->execute();
     }
 
-
-    public function excluirAnuncios($id){
+    public function deleteAnuncios($id){
         global $pdo;
 
         $sql = $pdo->prepare("DELETE FROM anuncios WHERE id=:id");
         $sql->bindValue(":id",$id);
         $sql->execute();
     }
-}
+
+    public function updateAnuncios($id, $titulo, $valor, $descricao){
+        global $pdo;
+  
+            $sql = $pdo->prepare("UPDATE anuncios SET titulo=:titulo, valor=:valor, descricao=:descricao WHERE id=:id");
+            $sql->bindValue(":id",$id);
+            $sql->bindValue(":titulo", $titulo);
+            $sql->bindValue(":valor", $valor);
+            $sql->bindValue(":descricao", $descricao);
+            $sql->execute(); 
+        }   
+    }
