@@ -20,7 +20,7 @@
 		$valor = addslashes($_POST['valor']);
 		$estado = addslashes($_POST['estado']);
 
-		$a->addAnuncios($titulo, $categoria, $valor, $descricao,  $estado);
+		$a->postAnuncios($titulo, $categoria, $valor, $descricao,  $estado);
 		
 		?>
 			<div class="alert alert-success">
