@@ -57,7 +57,10 @@ class Usuarios{
 
         $sql = $pdo->prepare("SELECT * FROM usuarios");
         $sql->execute();
-    
+
+        if($sql->rowCount() > 0){    
+            return count($sql->fetchAll());
+        }  
     }
  
     

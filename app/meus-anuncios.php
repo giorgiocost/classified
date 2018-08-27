@@ -6,6 +6,7 @@
 <?php
        exit;
     }
+    
 ?>
 
 <div class="container">
@@ -29,9 +30,7 @@
         $a = new Anuncios();
         $anuncios = $a->getMeusAnuncios();
         
-            foreach($anuncios as $anuncio){
-
-                 
+            foreach($anuncios as $anuncio){                 
     ?>
         <tr>
                 <td>
