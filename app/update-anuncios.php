@@ -1,7 +1,6 @@
 <?php 
     require "pages/header.php";
-    if(empty($_SESSION['cLogin'])){
-		
+    if(empty($_SESSION['cLogin'])){	
 ?>
 		<script type="text/javascript">window.location.href="login.php";</script>
 <?php
@@ -11,23 +10,17 @@
 	require "classes/anuncios.class.php";
 	$a = new Anuncios();
 
-	$titulo = $_POST['titulo'];
-	$valor = $_POST['valor'];
-	$descricao = $_POST['descricao'];
-	
-    $a->updateAnuncios($_GET['id'], $titulo, $valor, $descricao);
+	$titulo = addslashes($_POST['titulo']);
+	$valor = addslashes($_POST['valor']);
+	$descricao = addslashes($_POST['descricao']);	
+$a->updateAnuncios($_GET['id'], $titulo, $valor, $descricao);
 
 ?>
 
+<div class="alert alert-success">Produto editado com sucesso</div>
 <div class="container">
 <h1>Meus Anúncios - Atualizar Anúncios</h1>
 <form method="POST" enctype="multipart/form-data">
-
-
-<?php
-?>
-
-
 	<div class="form-group">
 		<label for="titulo">Título:</label>
 		<input type="text" name="titulo" id="titulo" class="form-control"  value="<? echo $_SESSION['titulo']; ?>"/>
@@ -40,7 +33,6 @@
 		<label for="descricao">Descrição:</label>
 		<input type="text" name="descricao" id="descricao" value="<? echo $_SESSION['descricao']; ?>" class="form-control" />
 	</div>
-	
 		<input type="submit" value="Atualizar" class="btn btn-default" />
 	</form>
 </div>

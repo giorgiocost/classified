@@ -1,14 +1,16 @@
-<?php require "pages/header.php"; ?>
+<?php require "pages/header.php"; 
+require "classes/usuarios.class.php";
+require "classes/anuncios.class.php";
+$qtdUser = new Usuarios();
+$qtdAnuncios = new Anuncios();
+ 
+?>
+
+
     <div class="container-fluid">
         <div class="jumbotron">
-            <h2>Nós Temos hoje 254 anúncios.</h2>
-            <p>E mais de 1000 usuários cadastrados.</p>
-            <?php
-            require "classes/usuarios.class.php";
-
-            $qtd = new usuarios();
-            echo $qtd->getQuantidadeUsuariosCadastrados(); 
-            ?>
+            <h2>Nós Temos hoje <? echo $qtdAnuncios->getQuantidadeAnuncios(); ?> anúncios.</h2>
+            <p>E mais de <? echo $qtdUser->getQuantidadeUsuariosCadastrados(); ?> usuários cadastrados.</p>
         </div>
         <div class="row">
             <div class="col-sm-3">
